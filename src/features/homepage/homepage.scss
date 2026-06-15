@@ -1,0 +1,457 @@
+.hero-header {
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin-top: 80px; /* small screens */
+}
+
+@media (min-width: 768px) {
+  .hero-header {
+    margin-top: 20px; /* md */
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-header {
+    margin-top: 30px; /* lg */
+  }
+}
+
+
+.apple-header-light{
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.mask-grad {
+  background: linear-gradient(20deg, #062e00, rgb(0 0 0 / 75%), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  opacity: 0; /* Initial state */
+  transition: opacity 3s ease; /* Default transition time */
+}
+
+.mask-grad.active {
+  opacity: 1; /* Fully transparent */
+  transition: opacity 3s ease; /* Longer transition for becoming active */
+}
+
+.mask-grad.not-active {
+  opacity: 0; /* Fully visible */
+  transition: opacity 0.5s ease; /* Shorter transition for becoming not-active */
+}
+
+
+
+.mask-gradk {
+
+  opacity: 0; /* Initial state */
+  transition: opacity 3s ease; /* Default transition time */
+}
+
+.mask-gradk.active {
+  opacity: 1; /* Fully transparent */
+  transition: opacity 3s ease; /* Longer transition for becoming active */
+}
+
+.mask-gradk.not-active {
+  opacity: 0; /* Fully visible */
+  transition: opacity 0.5s ease; /* Shorter transition for becoming not-active */
+}
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 120px;
+
+  // Slider
+  .hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    .slide {
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity 1.2s ease-in-out,
+      visibility 1.2s ease-in-out;
+
+      &.active {
+
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+
+      }
+
+
+      .slide-bg {
+
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+        .slide-overlay {
+
+          position: absolute;
+          inset: 0;
+
+          background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .55)
+          );
+
+        }
+
+      }
+
+    }
+
+  }
+
+  // Slider Controls
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: white;
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      background: #2ba335;
+      border-color: #2ba335;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev {
+      left: 30px;
+    }
+
+    &.next {
+      right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+
+      &.prev {
+        left: 15px;
+      }
+      &.next {
+        right: 15px;
+      }
+    }
+  }
+
+  // Slider Dots
+  .slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      &.active {
+        width: 30px;
+        background: #2ba335;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  // Content
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px;
+
+    .hero-text {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(43, 163, 53, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(43, 163, 53, 0.3);
+
+      i {
+        color: #2ba335;
+        font-size: 1rem;
+      }
+
+      span {
+        color: #2ba335;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 20px;
+      line-height: 1.2;
+
+      .highlight {
+        color: #2ba335;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 3.5rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 4rem;
+      }
+    }
+
+    .hero-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      min-height: 80px;
+
+      .typed-text {
+        display: inline-block;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+
+  }
+}
+// Responsive
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        width: 200px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+//gallery
+.gallery {
+
+  margin-top: 2rem;
+  width:100%;
+  overflow: hidden;
+
+}
+
+
+
+/* shared row */
+.row {
+
+  display:grid;
+
+  gap:16px;
+
+  margin-bottom:16px;
+
+}
+
+
+
+/* desktop */
+
+.row-3 {
+
+  grid-template-columns:repeat(3,1fr);
+
+}
+
+
+.row-4 {
+
+  grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+
+.card {
+
+  overflow:hidden;
+
+  height:240px;
+
+  background:#222;
+
+}
+
+
+
+
+.card img {
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:transform .5s ease;
+
+}
+
+
+
+/* hover zoom */
+
+.card:hover img {
+
+  transform:scale(1.12);
+
+}
+
+
+
+
+
+
+/* ======================
+      MOBILE DESIGN
+   ====================== */
+
+@media(max-width:768px){
+
+
+  /*
+     top row:
+     2 images
+  */
+
+  .row-3 {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+
+  /*
+     bottom row:
+     3 images
+  */
+
+  .row-4 {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+
+
+  .row {
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+  }
+
+  .card {
+
+    height: 160px;
+
+  }
+
+}
+
+/* small phones */
+
+@media(max-width:480px){
+
+
+  .row-3 {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  .row-4 {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+
+
+  .card {
+
+    height: 120px;
+
+  }
+
+
+}

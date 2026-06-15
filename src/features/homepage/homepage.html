@@ -1,0 +1,84 @@
+<!--Hero-landing-->
+<section class="hero-section">
+  <!-- Background Slider -->
+  <div class="hero-slider">
+    @for (slide of slides; track i; let i = $index) {
+      <div class="slide"  [class.active]="currentSlide === i">
+        <div class="slide-bg" [style.background-image]="'url(' + slide.image + ')'">
+          <div class="slide-overlay"></div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Slider Dots -->
+  <div class="slider-dots">
+    @for (slide of slides; track i; let i = $index) {
+      <span class="dot" [class.active]="currentSlide === i"
+            (click)="goToSlide(i)">
+      </span>
+    }
+
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+<!--        <div class="hero-badge">-->
+<!--          <i class="bi bi-building"></i>-->
+<!--          <span>Ramco Investment Nigeria Limited</span>-->
+<!--        </div>-->
+
+        <h1 class="hero-title">
+          Welcome to<br>
+          <span class="highlight ramco-main">Ramco Investment <span class="ramco-green">Nigeria</span> Limited</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="typed-text"></span>
+        </p>
+
+        <div class="hero-buttons mb-5">
+          <a class="btn-primary" routerLink="/about">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+          <a class="btn-outline" routerLink="/contact-us">
+            Contact Us <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!--Gallery section-->
+<section class="gallery">
+
+  <!-- Top row (3 images) -->
+  <div class="row row-3">
+    @for (img of topRowImages.slice(0, isMobile ? 2:3); track i; let i = $index) {
+      <div class="card" >
+        <img [ngSrc]="img" alt="gallery image"
+        fill />
+      </div>
+    }
+
+  </div>
+
+  <!-- Bottom row (4 images) -->
+  <div class="row row-4">
+    @for (img of bottomRowImages.slice(0, isMobile ? 3:4); track i; let i = $index) {
+      <div class="card" >
+        <img [ngSrc]="img" alt="gallery image"
+        fill />
+      </div>
+    }
+  </div>
+
+</section>
+
+<!--Legacy-->
+<app-legacy></app-legacy>
+

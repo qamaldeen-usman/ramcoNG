@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+body {
+  padding-top: 80px;
+}
+
+.navbar {
+  z-index: 1050;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+.ramco-main {
+  color: #F58220 !important;
+}
+
+.ramco-green {
+  color: #2ba335;
+}
+
+.ramco-bg {
+background-color: #2E2E2E !important;
+}
+
+.ramco-org {
+  background-color: #ffffff;
+}
+
+/* DARK MODE */
+body {
+
+}
+body.dark-mode{
+  background-color: #2E2E2E;
+  color: #f1f5f9;
+}
+
+body.dark-mode .ramco-org{
+  background-color: transparent !important;
+}
+
+/* Navbar links */
+
+body.dark-mode .nav-link{
+  color: #f1f5f9 !important;
+}
+
+a {
+  border-radius: 8px;
+}
+
+a:hover {
+  color: #F58220;
+  border-radius: 8px;
+  transition: ease-in 0.3s;
+}
+
+contact-btn:hover {
+  color: #2ba335;
+}
+
+.btn-primary {
+  background: #2ba335;
+  color: white;
+  border: none;
+  border-radius: 8px;
+
+  &:hover {
+    background: #F58220;
+    //transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(43, 163, 53, 0.3);
+    color: #fff;
+  }
+}
+
+/*hero button*/
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: translateX(5px);
+    }
+  }
+
+  .btn-primary {
+    background: #2ba335;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: #F58220;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(43, 163, 53, 0.3);
+    }
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(245, 130, 32, 0.3);
+
+    &:hover {
+      border-color: #2ba335;
+      color: #2ba335;
+      transform: translateY(-2px);
+      background: rgba(43, 163, 53, 0.1);
+    }
+  }
+}
+
+
+/* when scrolling */
+nav.scrolled {
+  background: rgba(15, 15, 15, 0.55); // dark glass
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.top-bar.scrolled{
+  display: none;
+}
+
+

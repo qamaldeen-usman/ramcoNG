@@ -1,0 +1,205 @@
+<header class=" fixed-top ramco-org">
+
+  <!-- TOP BAR -->
+  <div class="top-bar ramco-bg text-white" [class.scrolled]="isScrolled">
+    <div class="container">
+
+      <div
+        class="d-flex justify-content-between align-items-center">
+
+        <div class="d-flex gap-4 small">
+
+          <div
+            class="text-white text-decoration-none">
+
+            <i class="bi bi-hammer me-1 ramco-main"></i>
+            Mining
+          </div>
+
+          <div
+            routerLink="/properties"
+            class="text-white text-decoration-none">
+
+            <i class="bi bi-building-gear me-1 ramco-main"></i>
+            General Contractor
+          </div>
+
+        </div>
+
+        <div class="small d-none d-md-flex gap-3">
+
+          <span>
+            <i class="bi bi-whatsapp me-1 ramco-main"></i>
+            +234 08066482686
+          </span>
+
+          <span>
+            <i class="bi bi-geo-alt me-1 ramco-main"></i>
+            Kogi, Nigeria
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm ramco-org" [class.scrolled]="isScrolled">
+
+    <div class="container">
+
+      <!-- Logo -->
+      <a
+        class="navbar-brand fw-bold"
+        routerLink="/">
+
+        <span class="ramco-main">
+          RI<span class="ramco-green">N</span>L
+        </span>
+
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div
+        class="collapse navbar-collapse"
+        id="mainNavbar">
+
+        <ul class="navbar-nav mx-auto fw-bold gap-1">
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/" routerLinkActive="/">
+              Home
+            </a>
+          </li>
+
+          <!-- About -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown">
+              About
+            </a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/category/phones">
+                  History
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/category/laptops">
+                  Team
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/category/accessories">
+                  Achievements
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <!-- Projects -->
+          <li class="nav-item dropdown">
+
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown">
+
+              Projects
+            </a>
+
+            <ul class="dropdown-menu">
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/properties">
+                  Mining
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/properties/land">
+                  Construction
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/properties/houses">
+                  Civil Engineering
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  routerLink="/properties/commercial">
+                  Dams
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="nav-item contact-btn btn-primary">
+            <a
+              class="nav-link  "
+              routerLink="/contact">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Actions -->
+        <div class="d-flex gap-2">
+
+          <!-- Theme switcher -->
+          <div class="theme-switcher d-flex align-items-center ms-auto">
+
+            <i class="bi bi-sun-fill ramco-main me-2"></i>
+
+            <label class="switch">
+              <input type="checkbox" [checked]="isDarkMode" (change)="toggleTheme($event)">
+              <span class="slider"></span>
+            </label>
+
+            <i class="bi bi-moon-fill ramco-main ms-2"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>

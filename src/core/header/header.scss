@@ -1,0 +1,125 @@
+a {
+  border-radius: 8px;
+}
+
+ul li a:hover {
+  color: #F58220;
+  transition: .3s;
+}
+
+.nav-link:hover {
+  color:#F58220 !important;
+  transition:.3s;
+}
+
+.contact-btn {
+  background:#2ba335;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.contact-btn .nav-link {
+  color:white !important;
+  padding:8px 20px;
+}
+
+
+.contact-btn:hover {
+  background:#F58220;
+  box-shadow:0 5px 15px rgba(43,163,53,0.3);
+}
+
+
+.contact-btn:hover .nav-link {
+  color:white !important;
+}
+/* when scrolling */
+nav.scrolled {
+  background: rgba(15, 15, 15, 0.55); // dark glass
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.top-bar.scrolled{
+  display: none;
+}
+
+/* Theme switcher */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider background */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+/* Toggle knob */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #F58220;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* When checked (dark mode) */
+input:checked + .slider {
+  background-color: #333;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+
+//contact-btn mobile view
+@media (max-width: 768px) {
+  #mainNavbar {
+    border: 1px solid;
+    padding: 0.2rem;
+    margin-top: 1rem;
+    //margin-bottom: 0.2rem;
+    border-radius: 8px;
+  }
+
+  .contact-btn {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .theme-switcher {
+    //display: flex;
+    //align-items: center;
+    //gap: 10px;
+  display: none;
+  }
+}
