@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-leadership',
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './leadership.html',
   styleUrl: './leadership.scss',
 })

@@ -1,0 +1,191 @@
+/* Gallery Item Base */
+.gallery-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Zoom Effect Wrapper */
+.zoom-effect-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 100%;
+  background: #f8f9fa;
+}
+
+.zoom-effect-wrapper .zoom-effect-img {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.zoom-effect-wrapper:hover .zoom-effect-img {
+  transform: scale(1.1);
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+/* Gallery Overlay (for images) */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.zoom-effect-wrapper:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.zoom-effect-wrapper:hover .gallery-overlay i {
+  transform: scale(1.2);
+}
+
+/* Video Overlay */
+.gallery-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.zoom-effect-wrapper:hover .gallery-video-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Play Button */
+.play-button {
+  width: 60px;
+  height: 60px;
+  background: #f57d00;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgb(65 253 13 / 0.4);
+  animation: pulse 2s infinite;
+}
+
+.zoom-effect-wrapper:hover .play-button {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 0 rgb(65 253 13 / 0.4);
+}
+
+.play-button i {
+  color: white;
+  font-size: 24px;
+  margin-left: 4px; /* Center the play icon */
+}
+
+/* Pulse Animation for Play Button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(65 253 13 / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(13, 110, 253, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+  }
+}
+
+/* LightGallery Customization */
+.lg-outer .lg-thumb-outer {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lg-outer .lg-thumb-item {
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+  border-color: #f57d00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .gallery-item .zoom-effect-wrapper {
+    border-radius: 0.75rem;
+  }
+
+  .play-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .play-button i {
+    font-size: 20px;
+  }
+}
+
+/* Ensure images don't break layout */
+.col-6 .zoom-effect-wrapper,
+.col-12 .zoom-effect-wrapper {
+  height: auto;
+}
+
+/* Fix for gallery item to maintain aspect ratio */
+.gallery-item {
+  aspect-ratio: auto;
+}
+
+/* If you want specific aspect ratios for consistency */
+@media (min-width: 768px) {
+  .col-6 .zoom-effect-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+
+  .col-6 .zoom-effect-wrapper img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .col-12 .zoom-effect-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .col-12 .zoom-effect-wrapper img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

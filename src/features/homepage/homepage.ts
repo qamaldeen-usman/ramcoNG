@@ -3,6 +3,12 @@ import {RouterLink} from '@angular/router';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import Typed from 'typed.js';
 import {Legacy} from './legacy/legacy';
+import {Numbers} from './numbers/numbers';
+import {Portfolio} from './portfolio/portfolio';
+import {Leadership} from './leadership/leadership';
+import {Advantage} from './advantage/advantage';
+import {Partners} from './partners/partners';
+import {CTA} from './cta/cta';
 
 @Component({
   selector: 'app-homepage',
@@ -11,6 +17,12 @@ import {Legacy} from './legacy/legacy';
     CommonModule,
     NgOptimizedImage,
     Legacy,
+    Numbers,
+    Portfolio,
+    Leadership,
+    Advantage,
+    Partners,
+    CTA,
   ],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss',
@@ -27,31 +39,23 @@ export class Homepage implements OnInit, OnDestroy {
   ){}
 
   slides = [
-    {image: 'assets/ramcobgs/15.jpg'},
-    {image: 'assets/ramcobgs/16.jpg'},
-    {image: 'assets/ramcobgs/3.jpg'},
-    {image: 'assets/ramcobgs/4.jpg'},
-    {image: 'assets/ramcobgs/5.jpg'},
-    {image: 'assets/ramcobgs/6.jpg'},
-    {image: 'assets/ramcobgs/17.jpg'},
-    // {image: 'assets/ramcobgs/8.jpg'},
-    // {image: 'assets/ramcobgs/9.jpg'},
-    // {image: 'assets/ramcobgs/10.jpg'},
-    // {image: 'assets/ramcobgs/11.jpg'},
-    // {image: 'assets/ramcobgs/12.jpg'},
+    {image: 'assets/ramcobgs/25.jpg'},
+    {image: 'assets/ramcobgs/26.jpg'},
+    {image: 'assets/ramcobgs/28.jpg'},
+    {image: 'assets/ramcobgs/31.jpg'},
   ];
 
   topRowImages = [
-    'assets/ramcobgs/marble.jpg',
-    'assets/ramcobgs/19.jpg',
-    'assets/ramcobgs/20.jpg',
+    'assets/ramcobgs/41.webp',
+    'assets/ramcobgs/27.webp',
+    'assets/ramcobgs/30.jpg',
   ];
 
   bottomRowImages = [
-    'assets/img4.jpg',
-    'assets/img5.jpg',
-    'assets/img6.jpg',
-    'assets/img7.jpg'
+    'assets/ramcobgs/32.jpg',
+    'assets/ramcobgs/33.webp',
+    'assets/ramcobgs/34.webp',
+    'assets/ramcobgs/35.jpg'
   ];
 
   isMobile = false;
@@ -150,9 +154,9 @@ export class Homepage implements OnInit, OnDestroy {
   initTypedText() {
     const options = {
       strings: [
-        'Building Infrastructures...',
-        'Shaping the Future...',
-        'Powering Progress...'
+        'Building World-Class Infrastructure Across Nigeria',
+        'Shaping the Future of quarry operations & mining',
+        'Powering Progress with quality fleets'
       ],
       typeSpeed: 50,
       backSpeed: 30,

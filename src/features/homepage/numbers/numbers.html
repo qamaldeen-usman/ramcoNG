@@ -1,1 +1,209 @@
-<p>numbers works!</p>
+<section class="px-4 py-5 mt-xl-3 mt-xxl-5">
+
+  <div class="align-items-center pt-1 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2">
+
+    <div class="col-lg-5 text-white">
+      <h2 class="h1 pb-1 pb-sm-2 mb-4">
+        Numbers that speak for themselves
+      </h2>
+
+      <p class="fs-xl mb-4">
+        Our track record is written in completed projects, satisfied clients, and
+        infrastructures that moves Nigeria forward. These are not promises,
+        these are facts.
+      </p>
+    </div>
+
+    <div class="stats-info" #statsSection>
+
+      <div class="row stats-grid">
+
+        <div class="stat-card">
+          <h6>Years in operation</h6>
+
+          <div class="stat-number">
+            {{ years }}+
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <p>
+            Building since the early 2000s with proven expertise
+          </p>
+        </div>
+
+
+        <div class="stat-card">
+          <h6>Roads constructed</h6>
+
+          <div class="stat-number">
+            {{ roads }}+
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <p>
+            Kilometers of highways and access routes delivered
+          </p>
+        </div>
+
+
+        <div class="stat-card">
+          <h6>Projects completed</h6>
+
+          <div class="stat-number">
+            {{ projects }}+
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <p>
+            Infrastructure, mining, and construction milestones achieved
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="container py-5 mt-5 mb-xl-3 mb-xxl-5 text-white-50">
+      <div class="row pt-2">
+
+        <!-- Text + CTA button -->
+        <div class="col-lg-6 d-flex flex-column mb-4 mb-lg-0 pb-sm-3 pb-lg-0">
+          <h1 class="display-1 text-uppercase fw-bold mt-auto mb-2">How <br> <span class="fw-normal">we <br> </span> operate<span class="d-none d-md-inline-block align-middle ms-4" style="width: 120px; height: 2px; background-color: currentColor;"></span></h1>
+          <div class="d-flex align-items-center py-4 py-lg-5">
+            <a class="btn btn-lg btn-primary rounded-0 me-2 me-sm-3" routerLink="/">Let's work together</a>
+            <div class="flex-shrink-sm-0">
+<!--              <img class="d-dark-mode-none" src="/assets/img/brands/clutch-rating-dark.svg" width="155" alt="Clutch">-->
+<!--              <img class="d-none d-dark-mode-block" src="/assets/img/brands/clutch-rating-light.svg" width="155" alt="Clutch">-->
+            </div>
+          </div>
+<!--           <ul class="nav mt-auto mx-n2 pt-sm-3 pt-lg-0">-->
+<!--            <li class="nav-item me-3">-->
+<!--              <a class="nav-link p-2" href="#">instagram</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item me-3">-->
+<!--              <a class="nav-link p-2" href="#">dribbble</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link p-2" href="#">behance</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+        </div>
+
+        <!-- Services (Grid of cards) -->
+        <div class="col-lg-6">
+          <div class="row row-cols-1 row-cols-sm-2 g-1">
+
+            <!-- Card -->
+            <div class="col">
+              <a class="card-flip" href="#">
+                <div class="card-flip-inner">
+                  <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/29.jpg);">
+                    <div class="d-flex flex-column h-100" data-bs-theme="light">
+                      <h2 class="fs-lg fw-normal mb-0 mt-auto">Civil Engineering</h2>
+                    </div>
+                  </div>
+                  <div class="card-flip-back bg-secondary">
+                    <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                      <h3 class="h4">Civil Engineering</h3>
+                      <p class="text-body mb-3">
+                        Every project built to exact specifications & international standards.
+                      </p>
+                      <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                        <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                          <i class="ai-arrow-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card -->
+            <div class="col">
+              <a class="card-flip" href="#">
+                <div class="card-flip-inner">
+                  <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/33.webp);">
+                    <div class="d-flex flex-column h-100" data-bs-theme="light">
+                      <h2 class="fs-lg fw-normal mb-0 mt-auto">Mining Expertise</h2>
+                    </div>
+                  </div>
+                  <div class="card-flip-back bg-secondary">
+                    <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                      <h3 class="h4">Mining/Quarry Operator</h3>
+                      <p class="text-body mb-3">
+                        Marble extraction and processing with Industrial-grade operations.
+                        Gold, feldspar and Lithium Quarry operations.
+                      </p>
+                      <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                        <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                          <i class="ai-arrow-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card -->
+            <div class="col order-sm-2">
+              <div class="card-flip" href="#">
+                <div class="card-flip-inner">
+                  <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/39.jpg);">
+                    <div class="d-flex flex-column h-100" data-bs-theme="light">
+                      <h2 class="fs-lg fw-normal mb-0 mt-auto">Construction Machines</h2>
+                    </div>
+                  </div>
+                  <div class="card-flip-back bg-secondary">
+                    <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                      <h3 class="h4">Plant Hiring</h3>
+                      <p class="text-body mb-3">
+                         Heavy-duty Machinery fleet maintained, ready for deployment & available for rental.
+                      </p>
+                      <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                        <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                          <i class="ai-arrow-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="col order-sm-1">
+              <a class="card-flip" href="#">
+                <div class="card-flip-inner">
+                  <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/40.jpg);">
+                    <div class="d-flex flex-column h-100" data-bs-theme="light">
+                      <h2 class="fs-lg fw-normal mb-0 mt-auto">Sales of Machinery</h2>
+                    </div>
+                  </div>
+                  <div class="card-flip-back bg-secondary">
+                    <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                      <h3 class="h4">Importer & Exporter</h3>
+                      <p class="text-body mb-3">
+                        Quality machinery fleet ready for sale.
+                      </p>
+                      <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                        <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                          <i class="ai-arrow-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+

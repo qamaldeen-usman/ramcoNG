@@ -1,0 +1,172 @@
+// Comprehensive dark mode tab styling
+@media (prefers-color-scheme: dark) {
+  // Fix for regular nav-tabs
+  .nav-tabs {
+    .nav-item {
+      .nav-link {
+        background: #2d2d2d;
+        border: 1px solid #3d3d3d;
+        color: #adb5bd;
+
+        &:hover {
+          background: #3d3d3d;
+          border-color: #4d4d4d;
+          color: #ffffff;
+        }
+
+        &.active {
+          border-color: #e9ecef;
+          color: #ffffff;
+
+          &:hover {
+            border-color:#e9ecef;
+            color: #ffffff;
+          }
+        }
+
+        // Disabled tabs
+        &.disabled {
+          color: #6c757d;
+          background: #1a1a1a;
+          border-color: #2d2d2d;
+        }
+      }
+    }
+  }
+
+  // Fix for nav-pills (if you're using them)
+  .nav-pills {
+    .nav-link {
+      background: #2E2E2E;
+      color: #adb5bd;
+
+      &:hover {
+        background: #3d3d3d;
+        color: #ffffff;
+      }
+
+      &.active {
+        background: #0d6efd;
+        color: #ffffff;
+
+        &:hover {
+          background: #0b5ed7;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  // Fix for any tab with bg-white or bg-light
+  .tab-pane {
+    &.bg-white,
+    &.bg-light {
+      background: #2d2d2d !important;
+      color: #f8f9fa !important;
+
+      p, li {
+        color: #ced4da !important;
+      }
+    }
+  }
+}
+
+// Responsive tabs - NO horizontal scroll
+.responsive-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: none;
+  margin-bottom: 0 !important;
+
+
+
+  .nav-item {
+    flex: 1 1 auto;
+    min-width: 100px;
+    margin-bottom: 6px;
+
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
+      min-width: auto;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      flex: 0 1 calc(50% - 6px);
+      min-width: auto;
+    }
+
+    @media (min-width: 769px) and (max-width: 992px) {
+      flex: 0 1 calc(33.333% - 6px);
+      min-width: auto;
+    }
+
+    @media (min-width: 993px) {
+      flex: 0 1 auto;
+    }
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    background: #f8f9fa;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    @media (max-width: 480px) {
+      white-space: normal;
+      font-size: 13px;
+      padding: 10px 14px;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      font-size: 13px;
+      padding: 8px 12px;
+    }
+
+    &:hover {
+      background: #e9ecef;
+      border-color: #ced4da;
+      color: #212529;
+      transform: translateY(-1px);
+    }
+
+    &.active {
+      background: #f57d00 !important;
+      border-color: #ced4da;
+      color: #fff;
+      box-shadow: 0 4px 12px rgb(73 253 13 / 0.3);
+
+      &:hover {
+        background: #f57d00 !important;
+        border-color: #ced4da;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+// Remove SimpleBar if it's causing issues
+[data-simplebar] {
+  overflow: visible !important;
+}
+
+.simplebar-wrapper,
+.simplebar-mask,
+.simplebar-offset,
+.simplebar-content-wrapper,
+.simplebar-content {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+.simplebar-track {
+  display: none !important;
+}

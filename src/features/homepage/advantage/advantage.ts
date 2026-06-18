@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './advantage.html',
   styleUrl: './advantage.scss',
 })
-export class Advantage {}
+export class Advantage {
+  currentTheme: 'light' | 'dark' = 'light';
+
+  toggleTheme() {
+    this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+  }
+}

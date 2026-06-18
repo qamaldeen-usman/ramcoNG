@@ -7,15 +7,41 @@ ul li a:hover {
   transition: .3s;
 }
 
+// Remove default blue background on active/click
+.dropdown-item {
+  color: #333;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 8px 20px;
+
+  &:hover {
+    background-color: rgba(245, 130, 32, 0.1);
+    color: #F58220;
+  }
+
+  // FIX: Override Bootstrap's default blue active state
+  &.active,
+  &:active {
+    background-color: #F58220 !important;
+    color: #ffffff !important;
+  }
+
+  // FIX: Override focus state
+  &:focus {
+    background-color: rgba(245, 130, 32, 0.1);
+    color: #F58220;
+  }
+}
+
 .nav-link:hover {
   color:#F58220 !important;
   transition:.3s;
 }
 
 .contact-btn {
-  background:#2ba335;
+  background:linear-gradient(135deg, rgb(245, 130, 32, 100), rgb(43, 163, 69, 100));
   border-radius:8px;
-  transition:0.3s;
+  transition:all 0.3s ease;
 }
 
 .contact-btn .nav-link {
