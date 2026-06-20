@@ -7,6 +7,24 @@ ul li a:hover {
   transition: .3s;
 }
 
+.logo {
+  width: 53px;
+  height: 53px;
+  display: block;
+  background-image: url("/assets/app-icons/ramco_logo_dk.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar {
+  //height: 60px;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 // Remove default blue background on active/click
 .dropdown-item {
   color: #333;
@@ -148,4 +166,13 @@ input:checked + .slider::before {
     //gap: 10px;
   display: none;
   }
+
+  //img {
+  //  height: 73px;
+  //background-color: red;
+  //}
+}
+
+@media (max-width: 380px) {
+
 }

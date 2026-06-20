@@ -25,13 +25,16 @@
   .footer-main {
     background: #171717;
     border-color: #2a2a2a;
+    border-radius: 1px;
   }
 
   .info-block p,
   .copyright,
   .bottom-links a {
     color: #bdbdbd;
+    font-size: .8rem;
   }
+
 
   .link-column a {
     color: #ffffff;
@@ -65,7 +68,7 @@
   padding: 28px 32px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   transition: border-color 0.3s ease;
 
   @media (max-width: 992px) {
@@ -89,14 +92,21 @@
 // ============================================
 
 .footer-info {
-  max-width: 360px;
+  max-width: 100%;
 
   @media (max-width: 992px) {
     max-width: 100%;
   }
 }
 
-.logo {
+img {
+  width: auto;
+  height: 60px;
+  display: block;
+}
+
+
+.flogo {
   font-size: 28px;
   font-style: italic;
   font-weight: 500;
@@ -124,7 +134,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 0.8rem;
     line-height: 1.8;
     color: #666666;
     margin: 0;
@@ -214,7 +224,7 @@
   a {
     color: #111111;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.3s ease;
 

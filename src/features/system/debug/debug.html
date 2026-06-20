@@ -1,0 +1,98 @@
+
+<main style="overflow: hidden">
+
+
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h4 class="modal-head">{{ selectedProduct.name }}</h4>
+      <div *ngIf="selectedProduct?.services && selectedProduct.services.length > 0">
+        <div *ngFor="let service of selectedProduct.services">
+
+          <p>{{ service.description }}</p>
+          <div *ngIf="selectedProduct?.services && selectedProduct.services.length === 0">
+            <p>No services available for this product.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="position-relative bg-dark pt-lg-1 pt-xl-1">
+    <div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+      <div class="jarallax-img" style="background-image: url(/around-assets/hero-bg-pattern.webp);"></div>
+    </div>
+    <div class="container position-relative z-2 pt-2 pt-sm-4 pt-md-5">
+      <div class="row justify-content-center pt-1">
+        <div class="col-lg-9 col-xl-8.s text-center pt-5 mt-1">
+
+          <h1 class="display-4 text-white pt-3 mt-3 mb-4">Key Services Offered by Agfinity Agro-Allied Nig. Ltd</h1>
+
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block" style="height: 480px;"></div>
+    <div class="d-lg-none" style="height: 400px;"></div>
+    <div class="d-flex position-absolute bottom-0 start-0 w-100 overflow-hidden mb-n1"
+         style="color: var(&#45;&#45;ar-body-bg);">
+      <div class="position-relative start-50 translate-middle-x flex-shrink-0" style="width: 3774px;">
+        <svg width="3774" height="201" viewBox="0 0 3774 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 200.003C0 200.003 1137.52 0.188224 1873.5 0.000134392C2614.84 -0.189325 3774 200.003 3774 200.003H0Z"
+            fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="container position-relative z-3">
+    <div class="d-none d-lg-block" style="margin-top: -428px;"></div>
+    <div class=" d-lg-none" style="margin-top: -370px;"></div>
+    <div class="swiper js-swiper-main" >
+      <div class="swiper-wrapper">
+
+        <div class="row">
+          <div class="col-md-4 mb-3" *ngFor="let product of products; let i = index">
+            <a (click)="openModal(i)" class="card card-hover zoom-effect border-0 rounded-5 overflow-hidden">
+      <span class="position-absolute top-0 start-0 w-100 h-100 z-1"
+            style="background: linear-gradient(180deg, rgba(18, 21, 25, 0.00) 35.56%, #121519 95.3%);"></span>
+              <div class="position-absolute bottom-0 w-100 z-2 p-4">
+                <div class="px-md-3">
+                  <h4 class="h4 text-white mb-0">{{ product.name }}</h4>
+                </div>
+              </div>
+              <div class="zoom-effect-wrapper">
+                <div class="zoom-effect-img">
+                  <img style="min-height: 400px; object-fit: cover" [src]="product.image" alt="{{ product.name }}">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+
+</main>
+
+

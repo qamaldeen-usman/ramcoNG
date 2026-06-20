@@ -10,6 +10,7 @@ body {
   z-index: 1050;
 }
 
+
 .nav-link.active {
   font-weight: 600;
 }
@@ -50,6 +51,14 @@ body.dark-mode{
 
 body.dark-mode .ramco-org{
   background-color: transparent !important;
+}
+
+body.dark-mode .logo {
+  background-image: url("/assets/app-icons/ramco_logo_wht.svg")
+}
+
+body.dark-mode .hamburger-btn {
+  background-color: #F58220 !important;
 }
 
 /* Navbar links */

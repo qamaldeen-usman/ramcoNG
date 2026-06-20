@@ -21,7 +21,7 @@
             class="text-white text-decoration-none">
 
             <i class="bi bi-wallet-fill me-1 ramco-main"></i>
-            Machinery Sale
+            Plant Hiring/Sales
           </div>
 
           <div
@@ -62,15 +62,15 @@
       <a
         class="navbar-brand fw-bold"
         routerLink="/">
-
-        <span class="ramco-main">
-          RI<span class="ramco-green">N</span>L
-        </span>
-
+        <div class="logo" role="img" aria-label="company_name - homepage"></div>
+<!--        <img src="/assets/app-icons/ramco_logo_dk.svg"  alt="ramco_logo">-->
+<!--        <span class="ramco-main">-->
+<!--          RI<span class="ramco-green">N</span>L-->
+<!--        </span>-->
       </a>
 
       <button
-        class="navbar-toggler"
+        class="navbar-toggler hamburger-btn"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#mainNavbar"
@@ -89,13 +89,17 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              routerLink="/" routerLinkActive="/">
+              routerLink="/"
+              routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact : true}">
               Home
             </a>
           </li>
 
           <!-- About -->
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: false}">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -107,7 +111,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/category/phones">
+                  routerLink="/about/history"
+                  routerLinkActive="active">
                   History
                 </a>
               </li>
@@ -115,7 +120,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/category/laptops">
+                  routerLink="/about/team"
+                  routerLinkActive="active">
                   Team
                 </a>
               </li>
@@ -123,7 +129,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/category/accessories">
+                  routerLink="/about/achievements"
+                  routerLinkActive="active">
                   Achievements
                 </a>
               </li>
@@ -131,13 +138,14 @@
           </li>
 
           <!-- Projects -->
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: false}">
 
             <a
               class="nav-link dropdown-toggle"
               href="#"
               data-bs-toggle="dropdown">
-
               Projects
             </a>
 
@@ -146,7 +154,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/properties">
+                  routerLink="/projects/mining"
+                  routerLinkActive="active">
                   Mining
                 </a>
               </li>
@@ -154,7 +163,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/properties/land">
+                  routerLink="/projects/construction"
+                  routerLinkActive="active">
                   Construction
                 </a>
               </li>
@@ -162,7 +172,8 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/properties/houses">
+                  routerLink="/projects/civil-engineering"
+                  routerLinkActive="active">
                   Civil Engineering
                 </a>
               </li>
@@ -170,8 +181,9 @@
               <li>
                 <a
                   class="dropdown-item"
-                  routerLink="/properties/commercial">
-                  Dams
+                  routerLink="/projects/plant-hiring-sales"
+                  routerLinkActive="active">
+                  Plant hiring/sales
                 </a>
               </li>
 

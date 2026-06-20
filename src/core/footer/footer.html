@@ -5,26 +5,72 @@
     <!-- Left -->
     <div class="footer-info">
 
-      <div class="logo">
-        RINL
+      <div class="flogo">
+        <img src="/assets/app-icons/ramco_logo_wht.svg" alt="ramco_logo">
       </div>
 
-      <div class="info-block">
-        <h4>Address</h4>
-        <p>
-          Kogi, Nigeria
-        </p>
+      <!-- Address and Links in same row -->
+      <div class="row g-5">
+        <!-- Address Column -->
+        <div class="col-lg-6">
+          <h4>Address</h4>
+          <div class="row g-3">
+            <!-- Head Office -->
+            <div class="col-md-4">
+              <h6>Head office</h6>
+              <p class="mb-0">
+                No. 116 Gimbiya Street Area 11<br>
+                P.O Box 1867<br>
+                Garki, Abuja
+              </p>
+            </div>
+            <!-- Quarry Site -->
+            <div class="col-md-4">
+              <h6>Quarry Site</h6>
+              <p class="mb-0">
+                KM 8 Crusher Village,<br>
+                Near State House Assembly,<br>
+                Lokoja, Kogi State. <br>
+                KM 24, Panda Site Ugya,<br>
+                Toto Nasarawa State
+              </p>
+            </div>
+            <!-- Branch Office -->
+            <div class="col-md-4">
+              <h6>Branch Office</h6>
+              <p class="mb-0">
+                No. 232<br>
+                Opposite Fed Pay Office,<br>
+                Lokoja, Kogi State
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links Column (same row as address) -->
+        <div class="col-lg-6">
+          <h4>Links</h4>
+          <div class="footer-links">
+            <div class="link-column">
+              <a href="#">About us</a>
+              <a href="#">Our services</a>
+              <a href="#">Featured projects</a>
+              <a href="#">Equipment division</a>
+              <a href="#">Leadership team</a>
+            </div>
+            <div class="link-column">
+              <a href="#">News and insights</a>
+              <a href="#">Safety standards</a>
+              <a href="#">Contact us</a>
+              <a href="#">Careers</a>
+              <a href="#">Sustainability</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="info-block">
-        <h4>Contact</h4>
-        <p>
-          +234 08066482686<br>
-          info@ramcoinvestment.com
-        </p>
-      </div>
-
-      <div class="socials">
+      <!-- Social Icons -->
+      <div class="socials mt-4">
         <a href="#" aria-label="Facebook">
           <i class="bi bi-facebook"></i>
         </a>
@@ -37,30 +83,12 @@
         <a href="#" aria-label="LinkedIn">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a href="#" aria-label="YouTube">
+        <a href="https://wa.me/23480664826"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="chat on whatsapp">
           <i class="bi bi-whatsapp"></i>
         </a>
-      </div>
-
-    </div>
-
-    <!-- Right -->
-    <div class="footer-links">
-
-      <div class="link-column">
-        <a href="#">About us</a>
-        <a href="#">Our services</a>
-        <a href="#">Featured projects</a>
-        <a href="#">Equipment division</a>
-        <a href="#">Leadership team</a>
-      </div>
-
-      <div class="link-column">
-        <a href="#">News and insights</a>
-        <a href="#">Safety standards</a>
-        <a href="#">Contact us</a>
-        <a href="#">Careers</a>
-        <a href="#">Sustainability</a>
       </div>
 
     </div>
@@ -75,9 +103,9 @@
     </div>
 
     <div class="bottom-links">
-      <a href="#">Privacy policy</a>
-      <a href="#">Terms of service</a>
-      <a href="#">Cookie settings</a>
+      <a routerLink="/system/privacy-policy">Privacy policy</a>
+      <a routerLink="/system/terms">Terms of service</a>
+      <a routerLink="/system/access-denied-504">Cookie settings</a>
     </div>
 
   </div>
