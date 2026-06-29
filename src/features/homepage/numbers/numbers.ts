@@ -1,5 +1,12 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
@@ -7,6 +14,7 @@ import { take, map } from 'rxjs/operators';
   selector: 'app-numbers',
   imports: [RouterLink],
   templateUrl: './numbers.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './numbers.scss',
 })
 export class Numbers implements AfterViewInit, OnDestroy {
@@ -33,14 +41,14 @@ export class Numbers implements AfterViewInit, OnDestroy {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(this.statsSection.nativeElement);
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   private startAnimations() {
@@ -53,22 +61,24 @@ export class Numbers implements AfterViewInit, OnDestroy {
   private animateNumberWithRxJS(
     property: 'years' | 'roads' | 'projects',
     target: number,
-    duration: number = 2000
+    duration: number = 2000,
   ) {
     const steps = 60; // 60fps
     const intervalTime = duration / steps;
 
-    const sub = interval(intervalTime).pipe(
-      take(steps + 1),
-      map(step => {
-        const progress = step / steps;
-        // EaseOutQuart
-        const eased = 1 - Math.pow(1 - progress, 4);
-        return Math.floor(eased * target);
-      })
-    ).subscribe(value => {
-      this[property] = value;
-    });
+    const sub = interval(intervalTime)
+      .pipe(
+        take(steps + 1),
+        map((step) => {
+          const progress = step / steps;
+          // EaseOutQuart
+          const eased = 1 - Math.pow(1 - progress, 4);
+          return Math.floor(eased * target);
+        }),
+      )
+      .subscribe((value) => {
+        this[property] = value;
+      });
 
     this.subscriptions.push(sub);
   }

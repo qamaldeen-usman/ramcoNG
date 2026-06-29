@@ -1,15 +1,20 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
-import {RouterLink} from '@angular/router';
-
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 declare const lightGallery: any;
 
 @Component({
   selector: 'app-portfolio',
-  imports: [
-    RouterLink
-  ],
+  imports: [RouterLink],
   templateUrl: './portfolio.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './portfolio.scss',
 })
 export class Portfolio implements AfterViewInit, OnDestroy {
@@ -72,13 +77,13 @@ export class Portfolio implements AfterViewInit, OnDestroy {
           modestbranding: 1,
           showinfo: 0,
           rel: 0,
-          controls: 1
+          controls: 1,
         },
         vimeoPlayerParams: {
           byline: 0,
           portrait: 0,
-          color: '0d6efd'
-        }
+          color: '0d6efd',
+        },
       });
 
       console.log('Gallery initialized successfully');

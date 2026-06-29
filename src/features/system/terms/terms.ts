@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-terms',
   standalone: true,
   imports: [],
   templateUrl: './terms.html',
-  styleUrl: './terms.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './terms.scss',
 })
-export class Terms {
-
-}
+export class Terms {}

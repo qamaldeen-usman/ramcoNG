@@ -1,14 +1,21 @@
-import {Component, ChangeDetectorRef, OnDestroy, Type, OnInit} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {
+  Component,
+  ChangeDetectorRef,
+  OnDestroy,
+  Type,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Typed from 'typed.js';
-import {Legacy} from './legacy/legacy';
-import {Numbers} from './numbers/numbers';
-import {Portfolio} from './portfolio/portfolio';
-import {Leadership} from './leadership/leadership';
-import {Advantage} from './advantage/advantage';
-import {Partners} from './partners/partners';
-import {CTA} from './cta/cta';
+import { Legacy } from './legacy/legacy';
+import { Numbers } from './numbers/numbers';
+import { Portfolio } from './portfolio/portfolio';
+import { Leadership } from './leadership/leadership';
+import { Advantage } from './advantage/advantage';
+import { Partners } from './partners/partners';
+import { CTA } from './cta/cta';
 
 @Component({
   selector: 'app-homepage',
@@ -25,37 +32,30 @@ import {CTA} from './cta/cta';
     CTA,
   ],
   templateUrl: './homepage.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './homepage.scss',
 })
 export class Homepage implements OnInit, OnDestroy {
-
-
   currentSlide = 0;
   private slideInterval: any;
   private typed: Typed | undefined;
 
-  constructor (
-    private cdr: ChangeDetectorRef
-  ){}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   slides = [
-    {image: 'assets/ramcobgs/25.jpg'},
-    {image: 'assets/ramcobgs/26.jpg'},
-    {image: 'assets/ramcobgs/28.jpg'},
-    {image: 'assets/ramcobgs/31.jpg'},
+    { image: 'assets/ramcobgs/25.jpg' },
+    { image: 'assets/ramcobgs/26.jpg' },
+    { image: 'assets/ramcobgs/28.jpg' },
+    { image: 'assets/ramcobgs/31.jpg' },
   ];
 
-  topRowImages = [
-    'assets/ramcobgs/41.webp',
-    'assets/ramcobgs/27.webp',
-    'assets/ramcobgs/30.jpg',
-  ];
+  topRowImages = ['assets/ramcobgs/41.webp', 'assets/ramcobgs/27.webp', 'assets/ramcobgs/30.jpg'];
 
   bottomRowImages = [
     'assets/ramcobgs/32.jpg',
     'assets/ramcobgs/33.webp',
     'assets/ramcobgs/34.webp',
-    'assets/ramcobgs/35.jpg'
+    'assets/ramcobgs/35.jpg',
   ];
 
   isMobile = false;
@@ -68,7 +68,7 @@ export class Homepage implements OnInit, OnDestroy {
     this.initTypedText();
 
     this.checkScreen();
-    window.addEventListener('resize', () => this.checkScreen())
+    window.addEventListener('resize', () => this.checkScreen());
   }
 
   checkScreen() {
@@ -78,50 +78,36 @@ export class Homepage implements OnInit, OnDestroy {
 
     this.isMobile = mobile;
 
-    this.topView = this.isMobile
-      ? this.topRowImages.slice(0, 2)
-      : this.topRowImages;
+    this.topView = this.isMobile ? this.topRowImages.slice(0, 2) : this.topRowImages;
 
-    this.bottomView = this.isMobile
-      ? this.bottomRowImages.slice(0, 3)
-      : this.bottomRowImages;
+    this.bottomView = this.isMobile ? this.bottomRowImages.slice(0, 3) : this.bottomRowImages;
   }
 
-  ngOnDestroy(){
-
-    if(this.slideInterval){
+  ngOnDestroy() {
+    if (this.slideInterval) {
       clearInterval(this.slideInterval);
     }
 
-    if(this.typed){
+    if (this.typed) {
       this.typed.destroy();
     }
-
   }
 
-  preloadImages(){
-
-    this.slides.forEach(slide=>{
-
+  preloadImages() {
+    this.slides.forEach((slide) => {
       const img = new Image();
       img.src = slide.image;
-
     });
-
   }
 
   startSlideshow() {
-
-    this.slideInterval = setInterval(()=>{
-
+    this.slideInterval = setInterval(() => {
       this.nextSlide();
-
-    },5000);
-
+    }, 5000);
   }
 
   stopSlideshow() {
-    if(this.slideInterval){
+    if (this.slideInterval) {
       clearInterval(this.slideInterval);
     }
   }
@@ -132,13 +118,9 @@ export class Homepage implements OnInit, OnDestroy {
   }
 
   nextSlide() {
-
-    this.currentSlide =
-      (this.currentSlide + 1) % this.slides.length;
-
+    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
 
     this.cdr.detectChanges();
-
   }
 
   goToSlide(index: number) {
@@ -156,7 +138,7 @@ export class Homepage implements OnInit, OnDestroy {
       strings: [
         'Building World-Class Infrastructure Across Nigeria',
         'Shaping the Future of quarry operations & mining',
-        'Powering Progress with quality fleets'
+        'Powering Progress with quality fleets',
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -169,7 +151,4 @@ export class Homepage implements OnInit, OnDestroy {
     };
     this.typed = new Typed('.typed-text', options);
   }
-
-
-
 }
