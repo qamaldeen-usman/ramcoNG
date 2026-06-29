@@ -97,7 +97,7 @@
 
             <!-- Card -->
             <div class="col">
-              <a class="card-flip" href="#">
+              <div class="card-flip" (click)="toggleFlip(0)" [class.isFlipped]="isFlipped[0]">
                 <div class="card-flip-inner">
                   <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/29.jpg);">
                     <div class="d-flex flex-column h-100" data-bs-theme="light">
@@ -118,12 +118,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
 
             <!-- Card -->
             <div class="col">
-              <a class="card-flip" href="#">
+              <div class="card-flip" >
                 <div class="card-flip-inner">
                   <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/33.webp);">
                     <div class="d-flex flex-column h-100" data-bs-theme="light">
@@ -145,12 +145,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
 
             <!-- Card -->
             <div class="col order-sm-2">
-              <div class="card-flip" href="#">
+              <div class="card-flip">
                 <div class="card-flip-inner">
                   <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/39.jpg);">
                     <div class="d-flex flex-column h-100" data-bs-theme="light">
@@ -176,7 +176,7 @@
 
             <!-- Card -->
             <div class="col order-sm-1">
-              <a class="card-flip" href="#">
+              <div class="card-flip" >
                 <div class="card-flip-inner">
                   <div class="card-flip-front" style="background-image: url(/assets/ramcobgs/40.jpg);">
                     <div class="d-flex flex-column h-100" data-bs-theme="light">
@@ -197,7 +197,7 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

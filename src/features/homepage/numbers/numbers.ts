@@ -10,6 +10,11 @@ import { take, map } from 'rxjs/operators';
   styleUrl: './numbers.scss',
 })
 export class Numbers implements AfterViewInit, OnDestroy {
+  isFlipped = [false, false, false, false];
+
+  toggleFlip(index: number) {
+    this.isFlipped[index] = !this.isFlipped[index];
+  }
   @ViewChild('statsSection') statsSection!: ElementRef;
 
   years = 0;
