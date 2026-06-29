@@ -27,7 +27,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/google3507be62cb880ffa.html"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
