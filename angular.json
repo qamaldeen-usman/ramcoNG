@@ -61,7 +61,6 @@
                   "maximumError": "10kB"
                 }
               ],
-              "prerender": false,
               "outputHashing": "all"
             },
             "development": {
