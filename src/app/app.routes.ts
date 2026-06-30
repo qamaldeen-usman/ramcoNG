@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 // Placeholder components for subpages
 // In a real app, these would be imported from their respective files
 export const routes: Routes = [
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: '', loadComponent: () => import('../features/homepage/homepage').then(m => m.Homepage) },
   { path: 'home', loadComponent: () => import('../features/homepage/homepage').then(m => m.Homepage) },
   {
     path: '',
