@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-access-denied-504',
   standalone: true,
   imports: [],
   templateUrl: './access-denied-504.html',
-  styleUrl: './access-denied-504.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './access-denied-504.scss',
 })
-export class AccessDenied504 {
-
-}
+export class AccessDenied504 {}
