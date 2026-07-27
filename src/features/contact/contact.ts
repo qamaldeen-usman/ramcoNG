@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { form } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-contact',
@@ -7,4 +8,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact.scss',
 })
-export class Contact {}
+export class Contact {
+  protected readonly form = form;
+}
