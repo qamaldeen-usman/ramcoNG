@@ -5,6 +5,8 @@ import {
   Type,
   OnInit,
   ChangeDetectionStrategy,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
@@ -16,6 +18,7 @@ import { Leadership } from './leadership/leadership';
 import { Advantage } from './advantage/advantage';
 import { Partners } from './partners/partners';
 import { CTA } from './cta/cta';
+import { isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
@@ -40,7 +43,8 @@ export class Homepage implements OnInit, OnDestroy {
   private slideInterval: any;
   private typed: Typed | undefined;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: object) {}
+
 
   slides = [
     { image: 'assets/ramcobgs/25.jpg' },
@@ -65,23 +69,33 @@ export class Homepage implements OnInit, OnDestroy {
   ngOnInit() {
     this.preloadImages();
     this.startSlideshow();
-    this.initTypedText();
 
-    this.checkScreen();
-    window.addEventListener('resize', () => this.checkScreen());
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkScreen();
+      window.addEventListener('resize', () => this.checkScreen());
+    }
+
+  }
+
+  ngAfterViewInit() {
+    this.initTypedText();
   }
 
   checkScreen() {
     const mobile = window.innerWidth <= 768;
 
-    if (mobile === this.isMobile) return;
+    if (isPlatformBrowser(this.platformId)) {
+      if (mobile === this.isMobile) return;
 
-    this.isMobile = mobile;
+      this.isMobile = mobile;
 
-    this.topView = this.isMobile ? this.topRowImages.slice(0, 2) : this.topRowImages;
+      this.topView = this.isMobile ? this.topRowImages.slice(0, 2) : this.topRowImages;
 
-    this.bottomView = this.isMobile ? this.bottomRowImages.slice(0, 3) : this.bottomRowImages;
-  }
+      this.bottomView = this.isMobile ? this.bottomRowImages.slice(0, 3) : this.bottomRowImages;
+    }
+    }
+
 
   ngOnDestroy() {
     if (this.slideInterval) {
@@ -94,6 +108,7 @@ export class Homepage implements OnInit, OnDestroy {
   }
 
   preloadImages() {
+    if (!isPlatformBrowser(this.platformId)) return;
     this.slides.forEach((slide) => {
       const img = new Image();
       img.src = slide.image;
@@ -149,6 +164,9 @@ export class Homepage implements OnInit, OnDestroy {
       cursorChar: '|',
       smartBackspace: true,
     };
-    this.typed = new Typed('.typed-text', options);
+    if (isPlatformBrowser(this.platformId)) {
+      this.typed = new Typed('.typed-text', options);
+    }
+
   }
 }

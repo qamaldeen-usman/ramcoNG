@@ -63,10 +63,6 @@
         class="navbar-brand fw-bold"
         routerLink="/">
         <div class="logo" role="img" aria-label="company_name - homepage"></div>
-<!--        <img src="/assets/app-icons/ramco_logo_dk.svg"  alt="ramco_logo">-->
-<!--        <span class="ramco-main">-->
-<!--          RI<span class="ramco-green">N</span>L-->
-<!--        </span>-->
       </a>
 
       <button
@@ -74,14 +70,18 @@
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#mainNavbar"
+        [class.active]="isNavbarOpen"
+        (click)="toggleNavbar()"
+        [attr.aria-expanded]="isNavbarOpen"
         aria-label="Toggle navigation">
 
-        <span class="navbar-toggler-icon"></span>
+        <span>{{ isNavbarOpen ? '✕' : '☰'}}</span>
       </button>
 
 
       <div
         class="collapse navbar-collapse"
+        [class.show]="isNavbarOpen"
         id="mainNavbar">
 
         <ul class="navbar-nav mx-auto fw-bold gap-1">
@@ -91,7 +91,7 @@
               class="nav-link"
               routerLink="/"
               routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact : true}">
+            [routerLinkActiveOptions]="{exact : true}" (click)="closeNavbar()">
               Home
             </a>
           </li>
@@ -112,7 +112,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/about/history"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   History
                 </a>
               </li>
@@ -121,7 +122,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/about/team"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Team
                 </a>
               </li>
@@ -130,7 +132,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/about/achievements"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Achievements
                 </a>
               </li>
@@ -155,7 +158,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/projects/mining"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Mining
                 </a>
               </li>
@@ -164,7 +168,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/projects/construction"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Construction
                 </a>
               </li>
@@ -173,7 +178,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/projects/civil-engineering"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Civil Engineering
                 </a>
               </li>
@@ -182,7 +188,8 @@
                 <a
                   class="dropdown-item"
                   routerLink="/projects/plant-hiring-sales"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  (click)="closeNavbar()">
                   Plant hiring/sales
                 </a>
               </li>
@@ -194,7 +201,8 @@
           <li class="nav-item contact-btn btn-primary">
             <a
               class="nav-link  "
-              routerLink="/contact">
+              routerLink="/contact"
+              (click)="closeNavbar()">
               Contact
             </a>
           </li>

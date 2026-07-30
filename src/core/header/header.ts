@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -9,37 +10,50 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header implements OnInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
   ngOnInit(): void {
-    const savedTheme = localStorage.getItem('theme');
+    if (isPlatformBrowser(this.platformId)) {
+      const savedTheme = localStorage.getItem('theme');
 
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-
-      this.isDarkMode = true;
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        this.isDarkMode = true;
+      }
     }
+
   }
 
   isDarkMode = false;
-
-  isMenuOpen = false;
+  isScrolled = false;
+  isNavbarOpen = false;
   protected isNavOpen: any;
 
   toggleTheme(event: any) {
     this.isDarkMode = event.target.checked;
-
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isDarkMode) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
     }
   }
 
-  isScrolled = false;
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
+  closeNavbar(): void {
+    this.isNavbarOpen = false;
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isScrolled = window.scrollY > 50;
+    }
+
   }
 }

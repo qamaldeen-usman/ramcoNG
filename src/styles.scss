@@ -11,7 +11,6 @@ body {
   z-index: 1050;
 }
 
-
 .nav-link.active {
   font-weight: 600;
 }
@@ -58,8 +57,8 @@ body.dark-mode .logo {
   background-image: url("/assets/app-icons/ramco_logo_wht.svg")
 }
 
-body.dark-mode .hamburger-btn {
-  background-color: #F58220 !important;
+body.dark-mode .navbar-toggler-icon {
+  outline: #F58220 !important;
 }
 
 /* Navbar links */
@@ -75,6 +74,30 @@ a:hover {
   color: #F58220;
   border-radius: 8px;
   transition: ease-in 0.3s;
+}
+
+span {
+  color: #F58220;
+  font-size: 2rem;
+}
+
+.hamburger-btn,
+button {
+  border: none;
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+  }
+  &:active {
+    transform: scale(0.92);
+  }
 }
 
 contact-btn:hover {
