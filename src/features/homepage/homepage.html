@@ -43,7 +43,7 @@
           <a class="btn-primary" routerLink="/about">
             Learn More <i class="bi bi-arrow-right"></i>
           </a>
-          <a class="btn-outline" routerLink="/contact-us">
+          <a class="btn-outline" routerLink="/contact">
             Contact Us <i class="bi bi-envelope"></i>
           </a>
         </div>
@@ -61,7 +61,7 @@
     @for (img of topRowImages.slice(0, isMobile ? 2:3); track i; let i = $index) {
       <div class="card" >
         <img [ngSrc]="img" alt="gallery image"
-        fill />
+        fill style="object-fit: cover; object-position: top;"/>
       </div>
     }
 
@@ -86,7 +86,7 @@
 <app-numbers></app-numbers>
 
 <!--portfolio-->
-<app-portfolio></app-portfolio>
+<!--<app-portfolio></app-portfolio>-->
 
 <!--leadership-->
 <app-leadership></app-leadership>

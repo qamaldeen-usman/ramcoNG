@@ -47,18 +47,18 @@ export class Homepage implements OnInit, OnDestroy {
 
 
   slides = [
-    { image: 'assets/ramcobgs/25.jpg' },
-    { image: 'assets/ramcobgs/26.jpg' },
+    { image: 'assets/ramcobgs/r4.webp' },
+    { image: 'assets/ramcobgs/r6.webp' },
     { image: 'assets/ramcobgs/28.jpg' },
-    { image: 'assets/ramcobgs/31.jpg' },
+    // { image: 'assets/ramcobgs/31.jpg' },
   ];
 
-  topRowImages = ['assets/ramcobgs/41.webp', 'assets/ramcobgs/27.webp', 'assets/ramcobgs/30.jpg'];
+  topRowImages = ['assets/ramcobgs/r1.jpg', 'assets/ramcobgs/rmain.webp', 'assets/ramcobgs/30.jpg'];
 
   bottomRowImages = [
-    'assets/ramcobgs/32.jpg',
-    'assets/ramcobgs/33.webp',
-    'assets/ramcobgs/34.webp',
+    'assets/ramcobgs/r5.webp',
+    'assets/ramcobgs/r3.webp',
+    'assets/ramcobgs/r2.webp',
     'assets/ramcobgs/35.jpg',
   ];
 
@@ -156,9 +156,9 @@ export class Homepage implements OnInit, OnDestroy {
         'Powering Progress with quality fleets',
       ],
       typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 2000,
-      startDelay: 500,
+      backSpeed: 15,
+      backDelay: 1000,
+      startDelay: 200,
       loop: true,
       showCursor: true,
       cursorChar: '|',
