@@ -57,28 +57,28 @@
 <section class="gallery">
 
   <!-- Top row (3 images) -->
-  <div class="row row-3" style="position: relative; width: 100%; overflow: hidden;">
-    @for (img of topRowImages.slice(0, isMobile ? 2:3); track img; let i = $index) {
-      <div class="card" >
-        <img [ngSrc]="img" alt="gallery image"
-        fill
-        [priority]="i === 0"
-             sizes="(max-width: 768px) 50vw, 33vw"
-        style="object-fit: cover; object-position: top;" />
-      </div>
-    }
+<!--  <div class="row row-3" style="position: relative; width: 100%; overflow: hidden;">-->
+<!--    @for (img of topRowImages.slice(0, isMobile ? 2:3); track img; let i = $index) {-->
+<!--      <div class="card" >-->
+<!--        <img [ngSrc]="img" alt="gallery image"-->
+<!--        fill-->
+<!--        [priority]="i === 0"-->
+<!--             sizes="(max-width: 768px) 50vw, 33vw"-->
+<!--        style="object-fit: cover; object-position: top;" />-->
+<!--      </div>-->
+<!--    }-->
 
-  </div>
+<!--  </div>-->
 
   <!-- Bottom row (4 images) -->
-  <div class="row row-4">
-    @for (img of bottomRowImages.slice(0, isMobile ? 3:4); track img; let i = $index) {
-      <div class="card" >
-        <img [ngSrc]="img" alt="gallery image"
-        fill />
-      </div>
-    }
-  </div>
+<!--  <div class="row row-4">-->
+<!--    @for (img of bottomRowImages.slice(0, isMobile ? 3:4); track img; let i = $index) {-->
+<!--      <div class="card" >-->
+<!--        <img [ngSrc]="img" alt="gallery image"-->
+<!--        fill />-->
+<!--      </div>-->
+<!--    }-->
+<!--  </div>-->
 
 </section>
 
