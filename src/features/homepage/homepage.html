@@ -2,9 +2,14 @@
 <section class="hero-section mt-2">
   <!-- Background Slider -->
   <div class="hero-slider">
-    @for (slide of slides; track i; let i = $index) {
-      <div class="slide"  [class.active]="currentSlide === i">
-        <div class="slide-bg" [style.background-image]="'url(' + slide.image + ')'">
+    @for (slide of slides; track $index; let i = $index) {
+      <div class="slide" [class.active]="currentSlide === i">
+        <div class="slide-bg">
+          <img [ngSrc]="slide.image"
+               [priority]="i === 0"
+               sizes="100vw"
+               fill
+               style="object-fit: cover; object-position: center;"  alt="img"/>
           <div class="slide-overlay"></div>
         </div>
       </div>

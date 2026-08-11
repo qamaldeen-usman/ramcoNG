@@ -3,10 +3,11 @@ import { Component, ChangeDetectionStrategy, AfterViewInit } from '@angular/core
 import { Autoplay, FreeMode } from 'swiper/modules';
 import { partnersList } from './partners-list';
 import Swiper from 'swiper';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-partners',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './partners.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './partners.scss',
@@ -40,7 +41,7 @@ export class Partners implements AfterViewInit {
           1200: { slidesPerView: 5 },
           1400: { slidesPerView: 6 },
           1600: { slidesPerView: 7 },
-        }
+        },
       });
 
       //Second swiper (RTL)
@@ -60,16 +61,11 @@ export class Partners implements AfterViewInit {
           0: { slidesPerView: 2 },
           600: { slidesPerView: 3 },
           800: { slidesPerView: 4 },
-          1200: { slidesPerView: 5},
+          1200: { slidesPerView: 5 },
           1400: { slidesPerView: 6 },
           1600: { slidesPerView: 7 },
-        }
+        },
       });
     }, 100);
-
-
-
-
-
   }
 }
