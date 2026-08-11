@@ -1,71 +1,30 @@
-<section class="bg-black pb-md-2 pt-lg-2 pb-lg-4 py-xl-4 py-xxl-5">
-  <div class="container py-5">
+<!-- Clients (Logos autoplay slider) -->
+<section class="pt-2">
+  <div class="container text-center">
+    <h2 class="h1 mb-2">Our Clients</h2>
+  </div>
 
-    <h1 class=" text-center pb-sm-2 py-md-3 mt-sm-2 mb-lg-4">Our Clients</h1>
-    <p class="text-center mb-2 fw-bold">
-      Trusted by government agencies and leading infrastructure companies
-    </p>
-
-    <!-- Client Grid - Responsive wrapping -->
-    <div class="row g-4 g-lg-5 mb-4 mb-lg-5">
-
-      <!-- Sponsor 1 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:fill;" src="/assets/ramcobgs/shello-computers-logo-web.png" alt="shello Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/envato-light.svg" alt="Envato Logo">
-        <p class="text-body-secondary mb-0">Faucibus amet cursus accumsan eleifend tempus diam id duis. Mi velit nulla purus commodo non.</p>
-      </div>
-
-      <!-- Sponsor 2 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/kogigovern.png" alt="Angular Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/angular-light.svg" alt="Angular Logo">
-        <p class="text-body-secondary mb-0">Nulla consequat tincidunt ut aliquet quam dignissim. Sagittis, enim libero ultrices eleifend congue.</p>
-      </div>
-
-      <!-- Sponsor 3 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/logo.png" alt="Pingdom Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/pingdom-light.svg" alt="Pingdom Logo">
-        <p class="text-body-secondary mb-0">Ornare leo sed gravida quam volutpat vulputate massa aliquam. Sem lacus, quam tellus duis sit pellentesque.</p>
-      </div>
-
-      <!-- Sponsor 4 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/ksp.jpg" alt="WooCommerce Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/woocommerce-light.svg" alt="WooCommerce Logo">
-        <p class="text-body-secondary mb-0">Imperdiet nunc, mauris, sed at egestas. Massa laoreet facilisis turpis adipiscing semper venenatis ipsum.</p>
-      </div>
-
-      <!-- Sponsor 5 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/osara.jpg" alt="Magento Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/magento-light.svg" alt="Magento Logo">
-        <p class="text-body-secondary mb-0">Purus eu faucibus at vel, aliquam. Faucibus nibh odio sed elementum blandit ut sociis et.</p>
-      </div>
-
-      <!-- Sponsor 6 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/pauun.png" alt="PAUUN Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/bootstrap-light.svg" alt="Bootstrap Logo">
-        <p class="text-body-secondary mb-0">Adipiscing ultrices risus maecenas libero donec nam. In sollicitudin nulla sagittis, neque sit ullamcorper.</p>
-      </div>
-
-      <!-- Sponsor 7 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/oilserve.png" alt="Laravel Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/laravel-light.svg" alt="Laravel Logo">
-        <p class="text-body-secondary mb-0">Pharetra morbi id nibh ut at risus tortor consequat. Dictum urna vulputate quis ut facilisis turpis purus commodo.</p>
-      </div>
-
-      <!-- Sponsor 8 -->
-      <div class="col-6 col-lg-3">
-        <img class="d-block d-dark-mode-none mb-2" style="width:100%; height:120px; object-fit:contain;" src="/assets/ramcobgs/navy.jpg" alt="React Logo">
-        <img class="d-none d-dark-mode-block mb-2" src="assets/img/landing/conference/sponsors/react-light.svg" alt="React Logo">
-        <p class="text-body-secondary mb-0">Suspendisse luctus maecenas tristique urna turpis aenean est. Porttitor porta nec tincidunt ut aliquet quam.</p>
-      </div>
-
+  <!-- First Swiper - Normal direction -->
+  <div class="swiper partners-swiper-normal pb-3 pb-sm-4 mb-xl-2">
+    <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+      @for (item of partnersList; track item.name) {
+        <div class="swiper-slide">
+          <img class="d-block d-dark-mode-none mx-auto" [src]="item.logo" width="196" [alt]="item.name">
+          <img class="d-none d-dark-mode-block mx-auto" [src]="item.logo" width="196" [alt]="item.name">
+        </div>
+      }
     </div>
+  </div>
 
+  <!-- Second Swiper - RTL direction with reversed partners -->
+  <div class="swiper partners-swiper-rtl" dir="rtl">
+    <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+      @for (item of reversedPartnersList; track item.name) {
+        <div class="swiper-slide">
+          <img class="d-block d-dark-mode-none mx-auto" [src]="item.logo" width="196" [alt]="item.name">
+          <img class="d-none d-dark-mode-block mx-auto" [src]="item.logo" width="196" [alt]="item.name">
+        </div>
+      }
+    </div>
   </div>
 </section>

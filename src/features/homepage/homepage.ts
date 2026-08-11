@@ -14,7 +14,6 @@ import Typed from 'typed.js';
 import { Legacy } from './legacy/legacy';
 import { Numbers } from './numbers/numbers';
 import { Portfolio } from './portfolio/portfolio';
-import { Leadership } from './leadership/leadership';
 import { Advantage } from './advantage/advantage';
 import { Partners } from './partners/partners';
 import { CTA } from './cta/cta';
@@ -29,7 +28,6 @@ import { isPlatformBrowser} from '@angular/common';
     Legacy,
     Numbers,
     Portfolio,
-    Leadership,
     Advantage,
     Partners,
     CTA,
