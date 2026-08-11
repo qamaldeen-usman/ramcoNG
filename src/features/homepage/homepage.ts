@@ -13,7 +13,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Typed from 'typed.js';
 import { Legacy } from './legacy/legacy';
 import { Numbers } from './numbers/numbers';
-import { Portfolio } from './portfolio/portfolio';
+// import { Portfolio } from './portfolio/portfolio';
 import { Advantage } from './advantage/advantage';
 import { Partners } from './partners/partners';
 import { CTA } from './cta/cta';
@@ -27,7 +27,6 @@ import { isPlatformBrowser} from '@angular/common';
     NgOptimizedImage,
     Legacy,
     Numbers,
-    Portfolio,
     Advantage,
     Partners,
     CTA,

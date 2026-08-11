@@ -5,8 +5,11 @@ import {
   AfterViewInit,
   OnDestroy,
   ChangeDetectionStrategy,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
@@ -18,6 +21,9 @@ import { take, map } from 'rxjs/operators';
   styleUrl: './numbers.scss',
 })
 export class Numbers implements AfterViewInit, OnDestroy {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   isFlipped = [false, false, false, false];
 
   toggleFlip(index: number) {
@@ -33,18 +39,20 @@ export class Numbers implements AfterViewInit, OnDestroy {
   private animationStarted = false;
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !this.animationStarted) {
-          this.animationStarted = true;
-          this.startAnimations();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.4 },
-    );
+    if (isPlatformBrowser(this.platformId)) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !this.animationStarted) {
+            this.animationStarted = true;
+            this.startAnimations();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.4 },
+      );
 
-    observer.observe(this.statsSection.nativeElement);
+      observer.observe(this.statsSection.nativeElement);
+    }
   }
 
   ngOnDestroy(): void {

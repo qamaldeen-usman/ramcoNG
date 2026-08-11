@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, ChangeDetectionStrategy } from '@angular/core';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import {  NgForOf, NgIf } from '@angular/common';
 import Swiper from 'swiper';
 import { interval } from 'rxjs';
 // @ts-ignore
@@ -8,7 +8,7 @@ import { DarkModeService } from '../../../services/dark-mode/dark-mode.service';
 @Component({
   selector: 'app-debug',
   standalone: true,
-  imports: [NgClass, NgIf, NgForOf],
+  imports: [ NgIf, NgForOf],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './debug.html',
   changeDetection: ChangeDetectionStrategy.Eager,

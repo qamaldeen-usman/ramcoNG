@@ -4,11 +4,10 @@ import { Title, Meta } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
 import { Header } from '../core/header/header';
 import { Footer } from '../core/footer/footer';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, NgOptimizedImage],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',

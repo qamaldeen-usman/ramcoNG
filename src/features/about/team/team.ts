@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+// import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-team',
-  imports: [NgOptimizedImage],
+  imports: [],
   templateUrl: './team.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './team.scss',
