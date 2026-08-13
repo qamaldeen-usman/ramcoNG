@@ -1,25 +1,29 @@
-<!-- First Swiper - Normal direction -->
-<div class="swiper partners-swiper-normal pb-3 pb-sm-4 mb-xl-2 mt-2">
-  <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
-    @for (item of partnersList; track item.name) {
-      <div class="swiper-slide">
-        <!-- Bind [width] and [height], then use style to shrink them visually -->
-        <img class="d-block d-dark-mode-none mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
-        <img class="d-none d-dark-mode-block mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
-      </div>
-    }
+<section>
+  <h2 class="mb-5 text-center fw-bold">Our Clients</h2>
+  <!-- First Swiper - Normal direction -->
+  <div class="swiper partners-swiper-normal pb-3 pb-sm-4 mb-xl-2 mt-2">
+    <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+      @for (item of partnersList; track item.name) {
+        <div class="swiper-slide">
+          <!-- Bind [width] and [height], then use style to shrink them visually -->
+          <img class="d-block d-dark-mode-none mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
+          <img class="d-none d-dark-mode-block mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
+        </div>
+      }
+    </div>
   </div>
-</div>
 
-<!-- Second Swiper - RTL direction with reversed partners -->
-<div class="swiper partners-swiper-rtl mb-3" dir="rtl">
-  <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
-    @for (item of reversedPartnersList; track item.name) {
-      <div class="swiper-slide">
-        <!-- Same update here -->
-        <img class="d-block d-dark-mode-none mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
-        <img class="d-none d-dark-mode-block mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
-      </div>
-    }
+  <!-- Second Swiper - RTL direction with reversed partners -->
+  <div class="swiper partners-swiper-rtl mb-3" dir="rtl">
+    <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+      @for (item of reversedPartnersList; track item.name) {
+        <div class="swiper-slide">
+          <!-- Same update here -->
+          <img class="d-block d-dark-mode-none mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
+          <img class="d-none d-dark-mode-block mx-auto" [ngSrc]="item.logo" [width]="item.width" [height]="item.height" style="width: 196px; height: auto;" [alt]="item.name">
+        </div>
+      }
+    </div>
   </div>
-</div>
+
+</section>
