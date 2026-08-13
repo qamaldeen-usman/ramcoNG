@@ -27,6 +27,8 @@ export class Partners implements AfterViewInit {
       setTimeout(() => {
         //First swiper - using the class we'll add to template
         new Swiper('.partners-swiper-normal', {
+          spaceBetween: 40,
+          slidesPerView: 'auto',
           modules: [Autoplay, FreeMode],
           loop: true,
           grabCursor: false,
@@ -49,6 +51,8 @@ export class Partners implements AfterViewInit {
 
         //Second swiper (RTL)
         new Swiper('.partners-swiper-rtl', {
+          spaceBetween: 40,
+          slidesPerView: 'auto',
           modules: [Autoplay, FreeMode],
           direction: 'horizontal',
           loop: true,

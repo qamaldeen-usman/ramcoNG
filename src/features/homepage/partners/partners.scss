@@ -1,0 +1,11 @@
+.partners-swiper-normal .swiper-slide,
+.partners-swiper-rtl .swiper-slide {
+  width: auto;        /* let the image determine width */
+  max-width: 100%;    /* prevent overflow */
+}
+
+.partners-swiper-normal img,
+.partners-swiper-rtl img {
+  max-width: 100%;    /* ensure images don't break out */
+  height: auto;
+}
