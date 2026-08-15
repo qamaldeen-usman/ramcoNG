@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ramcoinvestmentnigltd-c55fa.web.app/sitemap.xml
+
+Sitemap: https://ramcoinvestment.com.ng/sitemap.xml

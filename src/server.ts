@@ -15,7 +15,12 @@ const app = express();
 // Also moved the allowedHosts into the configuration object correctly.
 // @ts-ignore
 const angularApp = new AngularNodeAppEngine(app, {
-  allowedHosts: ['localhost', 'ramcoinvestmentnigltd-c55fa.web.app']
+  allowedHosts: [
+    'localhost',
+    'ramcoinvestment.com.ng',
+    'www.ramcoinvestment.com.ng',
+    'ramcoinvestmentnigltd-c55fa.web.app'
+  ]
 });
 
 /**
