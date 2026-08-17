@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 // Placeholder components for subpages
 // In a real app, these would be imported from their respective files
 export const routes: Routes = [
-  { path: '', loadComponent: () => import('../features/homepage/homepage').then(m => m.Homepage) },
   { path: 'home', loadComponent: () => import('../features/homepage/homepage').then(m => m.Homepage) },
   {
     path: '',
@@ -54,7 +53,6 @@ export const routes: Routes = [
     ]
   },
   {path: 'contact', loadComponent: () => import('../features/contact/contact').then(m => m.Contact)},
-  { path: '**', redirectTo: '/home' },
   // LEGAL PAGES
   {
     path: 'privacy',
