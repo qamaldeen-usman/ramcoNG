@@ -125,12 +125,6 @@ export class App {
           title = 'Page Not Found | RAMCO Investment Nigeria Ltd';
           description = 'The page you are looking for could not be found.';
           robots = 'noindex, nofollow';
-      } else {
-        // Normal pages can be indexed
-        this.metaService.updateTag({
-          name: 'robots',
-          content: 'robots',
-        });
       }
 
       // TITLE
@@ -140,6 +134,12 @@ export class App {
       this.metaService.updateTag({
         name: 'description',
         content: description,
+      });
+
+      // ROBOTS
+      this.metaService.updateTag({
+        name: 'robots',
+        content: robots,
       });
 
       // CANONICAL URL
